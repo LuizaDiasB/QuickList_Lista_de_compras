@@ -115,22 +115,44 @@ ul{
       }
     }
 
-    & input[type="checkbox"]:checked + .item-text{
+    & input[type="checkbox"]:checked + .textSpan{
       text-decoration: line-through;
     }
 
-    & .item-text{
+    & .textSpan{
       flex: 1;
-      min-width: 0;
-      overflow-wrap: anywhere;
     }
 
-    & #btnDeletarItem{
+    & .btnDeletarItem{
       margin-left: auto;
-      flex-shrink: 0;
       cursor: pointer;
     }
   }
+}
+
+.oculta-aviso{
+  margin-top: 2.25rem;
+  display: none;
+ 
+}
+
+.item-removido {   
+  background-color: var(--color-danger);
+    
+  border-radius: .75rem;
+    
+  padding:  .75rem;
+
+  font: var(--label);
+  color: var(--always-white);  
+    
+  display: flex;
+  gap: .5rem;
+}
+
+.item-removido :last-child{
+  margin-left: auto;
+  cursor: pointer;
 }
 
 @media (max-width: 39.1875rem) {
