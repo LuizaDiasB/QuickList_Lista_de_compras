@@ -2,6 +2,9 @@ const inputItem = document.getElementById('inputItem');
 const btnAddItem = document.getElementById('btnAddItem');
 const listaItens = document.getElementById('listaItens');
 
+const avisoRemocao = document.querySelector('.oculta-aviso')
+const btnFecharAviso = document.getElementById('btnFecharAviso')
+
 inputItem.addEventListener('input', () => {
   inputItem.value
 })
@@ -33,12 +36,20 @@ btnAddItem.addEventListener('click', (event)=> {
   btnDeletarItem.src = 'assets/delete-icon.svg'
   btnDeletarItem.alt = 'Deletar item'
   btnDeletarItem.classList.add('btnDeletarItem')
-  
-  btnDeletarItem.addEventListener('click', () => li.remove())
+
+  btnDeletarItem.addEventListener('click', () => {
+    li.remove()
+    avisoRemocao.style.display = 'block'
+  })
+
   li.append(btnDeletarItem)
 
   listaItens.append(li)
 
   inputItem.value = ''
   inputItem.focus()
+})
+
+btnFecharAviso.addEventListener('click', () => {
+  avisoRemocao.style.display = 'none'
 })
